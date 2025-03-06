@@ -17,7 +17,7 @@
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Nama</label>
-        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama" />
+        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" />
       </div>
       <div class="mb-3 form-password-toggle">
         <label class="form-label" for="password">Password</label>
