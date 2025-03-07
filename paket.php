@@ -9,7 +9,7 @@ include '.includes/header.php';
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form method="POST" action="proses_post.php" enctype="multipart/form-data">
+                    <form method="POST" action="proses_paket.php" enctype="multipart/form-data">
                         <!-- Nama Barang / Paket -->
                          <div class="mb-3">
                             <label for="post_title" class="form-label">Nama Barang</label>
@@ -18,19 +18,11 @@ include '.includes/header.php';
 
                          <!-- Berat Barang -->
                          <label class="form-label">Berat Barang</label>
-                         <div class="input-group">
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button" />
-                        <button
-                          class="btn btn-outline-primary dropdown-toggle"
-                          type="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                          id="satuanButton"
-                        >
-                          Pilih Satuan
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
+                        <div class="input-group">
+                        <input type="text" class="form-control" name="berat" required />
 
+                        <select class="form-select" name="satuan_id" required>
+                        <option value="">Pilih Satuan</option>
                         <?php
 
                             require 'config.php'; 
@@ -38,12 +30,13 @@ include '.includes/header.php';
                             $result = $conn->query($query);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<li><a class='dropdown-item' href='#' onclick='setSatuan(\"" . $row["satuan_nama"] . "\")'>" . $row["satuan_nama"] . "</a></li>";
+                                    echo "<option value='" . $row["satuan_id"] . "'>" . $row["satuan_nama"] . "</option>";
                                 }
-                            }
+                        }
                         ?>
-                        </ul>
-                      </div>
+                        </select>
+                        </div>
+
 
                         <!-- Tujuan-->
                         <div class="mb-3">
