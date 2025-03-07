@@ -6,14 +6,14 @@ include '.includes/header.php';
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
                     <form method="POST" action="proses_post.php" enctype="multipart/form-data">
                         <!-- Nama Barang / Paket -->
                          <div class="mb-3">
                             <label for="post_title" class="form-label">Nama Barang</label>
-                            <input type="text" class="form-control" name="post_title" required>
+                            <input type="text" class="form-control" name="nama_barang" required>
                          </div>
 
                          <!-- Berat Barang -->
@@ -45,16 +45,32 @@ include '.includes/header.php';
                         </ul>
                       </div>
 
-                         <!-- Input upload Gambar -->
-                          <div class="mb-3">
-                            <label for="formFile" class="form-label">Foto Barang</label>
-                            <input class="form-control" type="file" name="image" accept="image/*" /> 
-                        </div>
+                        <!-- Tujuan-->
+                        <div class="mb-3">
+                            <label for="post_title" class="form-label">Tujuan</label>
+                            <input type="text" class="form-control" name="tujuan" required>
+                         </div>
 
-                        <!-- Textarea Postingan -->
+                        <!-- Nama Biaya -->
+                        <div class="mb-3">
+                        <label for="post_title" class="form-label">Biaya</label>    
+                        <div class="input-group">                   
+                        <span class="input-group-text" id="basic-addon11">Rp.</span>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="x.xxx.xxx"
+                          aria-describedby="basic-addon11"
+                          name="biaya"
+                        />
+                      </div>
+                         </div>
+
+
+                        <!-- Deskripsi -->
                          <div class="mb-3">
-                            <label for="content" class="form-label">Konten</label>
-                            <textarea class="form-control" id="content" name="content"required></textarea>
+                            <label for="content" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" name="deskripsi"required></textarea>
                          </div>
                          <!-- Submit -->
                           <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>

@@ -21,11 +21,19 @@
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Posts</span></li>
     <!-- Forms -->
     <li class="menu-item">
-      <a href="posts.php" class="menu-link menu-toggle">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-detail"></i>
         <div data-i18n="Posts">Posts</div>
       </a>
-
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a href="pengiriman.php" class="menu-link">
+            <div data-i18n="Basic Inputs">Pengiriman</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="paket.php" class="menu-link">
+            <div data-i18n="Input groups">Paket</div>
           </a>
         </li>
       </ul>
