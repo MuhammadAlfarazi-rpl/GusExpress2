@@ -1,8 +1,8 @@
 <!-- Menu -->
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo">
-    <a href="./dashboard.php" class="app-brand-link">
-      <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase">IdeKreatif</span>
+    <a href="./dashboard-user.php" class="app-brand-link">
+    <img class="card-img-top" src="./assets/img/illustrations/gus-ex-logo-new.png" alt="Kamu sedang offline...">
     </a>
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
       <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -12,7 +12,7 @@
   <ul class="menu-inner py-1">
     <!-- Dashboard -->
     <li class="menu-item">
-      <a href="dashboard.php" class="menu-link">
+      <a href="dashboard-user.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
       </a>
@@ -27,13 +27,13 @@
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="posts.php" class="menu-link">
-            <div data-i18n="Basic Inputs">Post Baru</div>
+          <a href="pengiriman.php" class="menu-link">
+            <div data-i18n="Basic Inputs">Pengiriman</div>
           </a>
         </li>
         <li class="menu-item">
-          <a href="kategori.php" class="menu-link">
-            <div data-i18n="Input groups">Kategori</div>
+          <a href="paket.php" class="menu-link">
+            <div data-i18n="Input groups">Paket</div>
           </a>
         </li>
       </ul>
