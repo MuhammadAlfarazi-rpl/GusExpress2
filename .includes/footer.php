@@ -44,5 +44,20 @@
     <script src="assets/vendor/libs/summernote/summernote.js" defer></script>
     <!-- Active State JS -->
     <script src="assets/js/active-state-nav.js"></script>
+<<<<<<< Updated upstream
+=======
+    <!-- Additional JS by User Riis -->
+    <script>
+    function setSatuan(satuan) {
+        document.getElementById("satuanButton").innerText = satuan;
+    }
+
+    function setSatuan(value) {
+      document.getElementById("satuanButton").innerText = value; 
+      document.getElementById("satuanInput").value = id; 
+    }
+
+    </script>
+>>>>>>> Stashed changes
 </body>
 </html>
