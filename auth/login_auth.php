@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["username"] = $username;
             $_SESSION["nama"] = $name;
             $_SESSION["pelanggan_id"] = $row["pelanggan_id"];
+            $_SESSION["role"] = $row["role"];
 
             $_SESSION['notification'] = [
                'type' => 'primary',
