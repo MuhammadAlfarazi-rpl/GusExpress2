@@ -1,6 +1,7 @@
 <?php
 
 include '.includes/header.php';
+include '.includes/init_session.php'
 
 ?>
 
