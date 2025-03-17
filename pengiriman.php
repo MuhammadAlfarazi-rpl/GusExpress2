@@ -15,13 +15,11 @@ include '.includes/header.php';
                             <label for="post_title" class="form-label">Nama Pengirim</label>
                             <div>
                             <?php
-                            
-                            if (isset($_SESSION['nama'])) {
-                                echo  $_SESSION['nama'];
-                            } else {
-                                echo "Not logged in.";
-                            }
-
+                                if (isset($_SESSION["nama"])) {
+                                    echo $_SESSION["nama"];
+                                } else {
+                                    echo "Belum login nih...";
+                                }
                             ?>
                             </div>
                          </div>
