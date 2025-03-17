@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($password, $row["password"])) {
             $_SESSION["username"] = $username;
-            $_SESSION["nama"] = $name;
+            $_SESSION["nama"] = $row["nama"];
             $_SESSION["pelanggan_id"] = $row["pelanggan_id"];
             $_SESSION["role"] = $row["role"];
 
