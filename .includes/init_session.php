@@ -3,6 +3,7 @@ session_start();
 
 $username = $_SESSION["username"];
 $role = $_SESSION["role"];
+$nama = $_SESSION["nama"];
 
 $notification = $_SESSION['notification'] ?? null;
 if ($notification) {
