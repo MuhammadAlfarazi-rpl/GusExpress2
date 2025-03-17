@@ -10,4 +10,18 @@ if(isset($_POST['simpan'])) {
 
     $query = "INSERT INTO pengiriman (pelanggan_id, paket_id, deskripsi, tanggal_pengiriman) VALUES ('$nama','$paket','$desc',NOW())";
     $exec = mysqli_query($conn, $query);
+
+    if ($exec) {
+        $_SESSION['notification'] = [
+            'type' => 'primary',
+            'message' => 'Berhasil menambahkan pengiriman.'
+        ];
+
+    }else {
+        $_SESSION['notification'] = [
+            'type' => 'danger',
+            'message' => 'Pengiriman gagal ditambahkan'
+        ];
+    }
+    header('Location: pengiriman.php');
 }
