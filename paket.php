@@ -22,7 +22,7 @@ include '.includes/header.php';
                         <input type="text" class="form-control" name="berat" required />
 
                         <select class="form-select" name="satuan_id" required>
-                        <option value="">Pilih Satuan</option>
+                        <option value="" selected disabled>Pilih Satuan</option>
                         <?php
 
                             require 'config.php'; 
@@ -62,7 +62,7 @@ include '.includes/header.php';
 
                         <!-- Deskripsi -->
                          <div class="mb-3">
-                            <label for="content" class="form-label">Deskripsi</label>
+                            <label for="content" class="form-label">Detail Barang</label>
                             <textarea class="form-control" name="deskripsi"required></textarea>
                          </div>
                          <!-- Submit -->
