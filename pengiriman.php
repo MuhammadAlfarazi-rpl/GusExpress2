@@ -27,6 +27,7 @@ include '.includes/header.php';
                          <!-- Paket -->
                          <label class="form-label">Pilih Paket</label>
                          <select class="form-select" name="paket">
+                         <option value="" selected disabled>Pilih Paket</option>
                          <?php
                                 require 'config.php'; 
                                 $query = "SELECT * FROM paket";

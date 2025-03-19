@@ -4,6 +4,7 @@ session_start();
 $username = $_SESSION["username"];
 $role = $_SESSION["role"];
 $nama = $_SESSION["nama"];
+$user_id = $_SESSION["pelanggan_id"];
 
 $notification = $_SESSION['notification'] ?? null;
 if ($notification) {

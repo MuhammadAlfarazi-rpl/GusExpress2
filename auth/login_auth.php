@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                'type' => 'primary',
                'message' => 'Selamat Datang Kembali'
            ];
-           header("Location: ../dashboard-user.php");
+           header("Location: ../dashboard.php");
            exit();
 
         } else {
