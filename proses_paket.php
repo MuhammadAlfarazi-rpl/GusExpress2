@@ -28,3 +28,22 @@ if (isset($_POST['simpan'])) {
     }
     header('Location: paket.php');
 }
+
+if (isset($_POST["delete"])) {
+    $paketId = $_POST['paket_id'];
+    $execute = mysqli_query($conn, "DELETE FROM paket WHERE paket_id='$paketId'");
+
+    if ($execute) {
+        $_SESSION['notification'] = [
+            'type' => 'primary',
+            'message' => 'Paket berhasil dihapus.'
+        ];
+
+    }else {
+        $_SESSION['notification'] = [
+            'type' => 'danger',
+            'message' => 'Gagal menghapus paket'
+        ];
+    }
+    header('Location: paket.php');
+}
