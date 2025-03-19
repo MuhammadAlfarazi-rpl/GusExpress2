@@ -36,6 +36,11 @@
             <div data-i18n="Input groups">Paket</div>
           </a>
         </li>
+        <li class="menu-item">
+          <a href="paket_list.php" class="menu-link">
+            <div data-i18n="Input groups">List Paket</div>
+          </a>
+        </li>
       </ul>
     </li>
   </ul>
