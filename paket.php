@@ -63,7 +63,7 @@ include '.includes/header.php';
                         <!-- Deskripsi -->
                          <div class="mb-3">
                             <label for="content" class="form-label">Detail Barang</label>
-                            <textarea class="form-control" name="deskripsi"required></textarea>
+                            <textarea class="form-control" name="detail"required></textarea>
                          </div>
                          <!-- Submit -->
                           <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
