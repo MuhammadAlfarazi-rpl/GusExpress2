@@ -10,8 +10,9 @@ if (isset($_POST['simpan'])) {
     $tujuan = $_POST['tujuan'];
     $biaya = $_POST['biaya'];
     $detail = $_POST['detail'];
+    $pelangganID = $_SESSION["pelanggan_id"];
 
-    $query = "INSERT INTO paket (nama_paket, berat, satuan_id, tujuan, biaya, detail) VALUES ('$namaBarang','$beratBarang','$satuan','$tujuan','$biaya','$detail')";
+    $query = "INSERT INTO paket (nama_paket, berat, satuan_id, tujuan, biaya, detail, pelanggan_id) VALUES ('$namaBarang','$beratBarang','$satuan','$tujuan','$biaya','$detail','$pelangganID')";
     $exec = mysqli_query($conn, $query);
 
     if ($exec) {
