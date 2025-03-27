@@ -30,7 +30,7 @@ include '.includes/header.php';
                          <option value="" selected disabled>Pilih Paket</option>
                          <?php
                                 require 'config.php'; 
-                                $query = "SELECT * FROM paket";
+                                $query = "SELECT * FROM paket WHERE pelanggan_id = $user_id";
                                 $result = $conn->query($query);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
