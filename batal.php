@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 include 'config.php';
 session_start();
@@ -21,7 +20,3 @@ if(isset($_POST['delete'])) {
     }
     header('Location: dashboard.php');
 }
-=======
-
-
->>>>>>> f3f5f7c0b72f8cc5809ef1473e9b7ecb0872716a
