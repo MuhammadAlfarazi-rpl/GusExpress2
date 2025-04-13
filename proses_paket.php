@@ -46,5 +46,5 @@ if (isset($_POST["delete"])) {
             'message' => 'Gagal menghapus paket'
         ];
     }
-    header('Location: paket.php');
+    header('Location: paket_list.php');
 }

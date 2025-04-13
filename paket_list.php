@@ -12,6 +12,72 @@ include '.includes/header.php';
                 <div class="card-header d-flex justify-content-between align-items-center">
                 <h4>Semua Paket</h4>
             </div>
+            <div class="card-body">
+                <?php
+
+                $query = "SELECT
+                paket.*,
+                satuan.satuan_nama
+                FROM paket
+                LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id;";
+
+                $exec = mysqli_query($conn, $query);
+
+                if (mysqli_num_rows($exec) > 0) {
+                    while ($paket = mysqli_fetch_assoc($exec)) {
+                        $paket_id = $paket["paket_id"];
+                        echo '
+                        <div class="card border border-2 rounded-3 mb-3">
+                        <div class="accordion-item border-0 mb-0 shadow-none active" id="fl-'.$paket_id.'">
+                          <div class="accordion-header" id="fleetHeader'.$paket_id.'">
+                            <div role="button" class="accordion-button shadow-none align-items-center collapsed" data-bs-toggle="collapse" data-bs-target="#fleet'.$paket_id.'" aria-expanded="true" aria-controls="fleet'.$paket_id.'">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-wrapper">
+                                        <div class="avatar me-4">
+                                            <span class="avatar-initial rounded-circle bg-label-secondary w-px-40 h-px-40">
+                                                <i class="icon-base bx bxs-truck icon-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="d-flex flex-column gap-1">
+                                        <span class="text-heading fw-bold fs-7"><strong>'.$paket["nama_paket"].'</strong></span>
+                                        <span class="text-body">Paket ID : '.$paket["paket_id"].'</span>
+                                    </span>
+                                </div>
+                            </div>
+                          </div>
+                          <div id="fleet'.$paket_id.'" class="accordion-collapse collapse" data-bs-parent="#fleet">
+                            <div class="accordion-body">
+                                <span class="d-flex flex-column gap-1">
+                                        <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
+                                        <span class="text-body"><strong>ID Pengiriman : </strong>'.$paket["paket_id"].'</span>
+                                        <span class="text-body"><strong>Tujuan : </strong>'.$paket["tujuan"].'</span>
+                                        <span class="text-body"><strong>Berat Barang : </strong>'.$paket["berat"]." ". $paket["satuan_nama"].'</span>
+                                        <span class="text-body mb-3"><strong>Biaya : </strong>'.$paket["biaya"].'</span>
+                                        <span class="text-body mb-3"><strong>Pelanggan ID : </strong>'.$paket["pelanggan_id"].'</span>
+                                        <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$paket["detail"].'</span>
+                                </span>
+
+                                <form method="POST" action="proses_paket.php">
+                                <input type="hidden" name="paket_id" value="'.$paket['paket_id'].'">
+                                <button name="delete" type="submit" class="btn btn-outline-danger">Hapus Paket</button>
+                                </form>
+
+                                
+                                <input type="hidden" name="editPaket" value="'.$paket['paket_id'].'">
+                                <a href="edit_paket.php?editPaket=<?= '.$paket['paket_id'].'"><button name="edit" type="submit" class="btn btn-outline-danger">Edit Paket</button>
+                                
+                            </div>
+                            </div>
+                          </div>
+                        </div>';
+                    }
+                } else {
+                    echo '<p class="text-center text-muted">No data found.</p>';
+                }
+
+                ?>
+            </div>
         </div>
         </div>
     </div>
