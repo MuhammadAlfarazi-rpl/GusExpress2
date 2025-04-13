@@ -7,6 +7,12 @@ navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
     </a>
   </div>
   <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+  <li class="menu-item">
+      <a href="dashboard.php" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <div data-i18n="Analytics">Dashboard</div>
+      </a>
+    </li>
     <ul class="navbar-nav flex-row align-items-center ms-auto">
       <!-- User -->
       <li class="nav-item navbar-dropdown dropdown-user dropdown">
