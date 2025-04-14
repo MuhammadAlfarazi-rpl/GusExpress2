@@ -35,7 +35,7 @@ include '.includes/header.php';
                                     <div class="avatar-wrapper">
                                         <div class="avatar me-4">
                                             <span class="avatar-initial rounded-circle bg-label-secondary w-px-40 h-px-40">
-                                                <i class="icon-base bx bxs-truck icon-lg"></i>
+                                                <i class="icon-base bx bx-cube icon-lg"></i>
                                             </span>
                                         </div>
                                     </div>
