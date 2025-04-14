@@ -58,14 +58,13 @@ include '.includes/header.php';
                                         <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$paket["detail"].'</span>
                                 </span>
 
-                                <form method="POST" action="proses_paket.php">
-                                <input type="hidden" name="paket_id" value="'.$paket['paket_id'].'">
-                                <button name="delete" type="submit" class="btn btn-outline-danger">Hapus Paket</button>
-                                </form>
-
-                                
-                                <input type="hidden" name="editPaket" value="'.$paket['paket_id'].'">
-                                <a href="edit_paket.php?editPaket=<?= '.$paket['paket_id'].'"><button name="edit" type="submit" class="btn btn-outline-danger">Edit Paket</button>
+                                <span class="text-end pt-6 demo-inline-spacing">  
+                                        <form method="POST" action="proses_paket.php">
+                                            <input type="hidden" name="paket_id" value="'.$paket['paket_id'].'">
+                                        <button type="button" class="btn btn-primary"> <i class="bx bx-edit-alt"></i> Edit</button>
+                                        <button name="delete" type="submit" class="btn btn-outline-danger"> <i class="bx bx-trash" ></i> Hapus Paket</button>
+                                        </form>
+                                </span>
                                 
                             </div>
                             </div>
