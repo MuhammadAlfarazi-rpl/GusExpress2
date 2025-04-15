@@ -19,7 +19,8 @@ include '.includes/header.php';
                 paket.*,
                 satuan.satuan_nama
                 FROM paket
-                LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id;";
+                LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
+                WHERE paket.pelanggan_id = $user_id";
 
                 $exec = mysqli_query($conn, $query);
 
