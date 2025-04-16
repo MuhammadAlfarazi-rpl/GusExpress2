@@ -64,9 +64,7 @@ include '.includes/header.php';
                                             <input type="hidden" name="paket_id" value="'.$paket['paket_id'].'">
                                         <button name="delete" type="submit" class="btn btn-outline-danger"> <i class="bx bx-trash" ></i> Hapus Paket</button>
                                         <a href="edit_paket.php?paket_id= '.$paket['paket_id'].'"><button type="button" class="btn btn-primary"><i class="bx bx-edit-alt"></i>Edit</button></a>
-                                        </form>
-                                        
-                                        
+                                        </form>  
                                 </span>
                                 
                             </div>
