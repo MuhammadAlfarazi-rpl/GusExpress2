@@ -48,3 +48,34 @@ if (isset($_POST["delete"])) {
     }
     header('Location: paket_list.php');
 }
+
+if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
+
+    $namaBarang = $_POST['nama_barang'];
+    $beratBarang = $_POST['berat'];
+    $satuan = $_POST['satuan_id'];
+    $tujuan = $_POST['tujuan'];
+    $biaya = $_POST['biaya'];
+    $detail = $_POST['detail'];
+    $pelangganID = $_SESSION["pelanggan_id"];
+
+    $queryUpdate = "UPDATE paket SET nama_paket = '$namaBarang', berat = '$beratBarang', satuan_id = '$satuan', tujuan = '$tujuan', biaya = '$biaya', pelanggan_id = '$pelangganID', detail = '$detail'";
+    $X = mysqli_query($conn, $queryUpdate);
+
+    if($X){
+        $_SESSION['notification'] = [
+            'type' => 'primary',
+            'message' => 'Paket berhasil dihapus.'
+        ];
+
+    }else {
+        $_SESSION['notification'] = [
+            'type' => 'danger',
+            'message' => 'Gagal menghapus paket'
+        ];
+    }
+    header('Location: paket_list.php');
+
+
+    
+}
