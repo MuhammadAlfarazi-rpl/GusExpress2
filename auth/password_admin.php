@@ -39,9 +39,9 @@ include(".layouts/header.php");
 $enteredPassword = $_POST['passwordAdmin'];
 $password = 123;
 if ($enteredPassword == $password) {
-    header('');
+    header('Location: ../list_user.php');
 
 } else {
-    header('');
+    ('Location: password_admin.php');
 
 }

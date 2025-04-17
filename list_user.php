@@ -48,7 +48,7 @@ include '.includes/header.php';
                                                 <form action="update_role.php" method="POST" class="dropdown-item p-0">
                                                     <input type="hidden" name="pelanggan_id" value="<?= $pelanggan["pelanggan_id"]; ?>
                                                     <input type="hidden" name="role" value="admin">
-                                                    <button type="submit" class="dropdown-item">Ubah jadi Admin</button>
+                                                    <button type="submit" class="dropdown-item" name="ubah">Ubah jadi Admin</button>
                                                 </form>
                                             </li>
                                         </ul>
