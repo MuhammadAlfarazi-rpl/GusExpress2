@@ -13,28 +13,27 @@ if (isset($_POST['simpan'])) {
     $pelangganID = $_SESSION["pelanggan_id"];
 
     $query = "INSERT INTO paket (nama_paket, berat, satuan_id, tujuan, biaya, detail, pelanggan_id) VALUES ('$namaBarang','$beratBarang','$satuan','$tujuan','$biaya','$detail','$pelangganID')";
-    $exec = mysqli_query($conn, $query);
 
-    if ($exec) {
-        $_SESSION['notification'] = [
+    if($conn->query($query) === TRUE) {
+        $_SESSION["notification"] = [
             'type' => 'primary',
             'message' => 'Paket berhasil ditambahkan.'
         ];
 
-    }else {
-        $_SESSION['notification'] = [
+    } else {
+        $_SESSION["notification"] = [
             'type' => 'danger',
             'message' => 'Paket gagal ditambahkan'
         ];
     }
-    header('Location: paket.php');
+    header('Location: dashboard.php');
 }
 
 if (isset($_POST["delete"])) {
     $paketId = $_POST['paket_id'];
-    $execute = mysqli_query($conn, "DELETE FROM paket WHERE paket_id='$paketId'");
+    $deleteQuery = "DELETE FROM paket WHERE paket_id='$paketId'";
 
-    if ($execute) {
+    if ($conn->query($deleteQuery) === TRUE) {
         $_SESSION['notification'] = [
             'type' => 'primary',
             'message' => 'Paket berhasil dihapus.'
@@ -60,9 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
     $pelangganID = $_SESSION["pelanggan_id"];
 
     $queryUpdate = "UPDATE paket SET nama_paket = '$namaBarang', berat = '$beratBarang', satuan_id = '$satuan', tujuan = '$tujuan', biaya = '$biaya', pelanggan_id = '$pelangganID', detail = '$detail'";
-    $X = mysqli_query($conn, $queryUpdate);
 
-    if($X){
+    if($conn->query($queryUpdate) === TRUE){
         $_SESSION['notification'] = [
             'type' => 'primary',
             'message' => 'Paket berhasil dihapus.'
@@ -79,3 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
 
     
 }
+
+$conn->close();
+?>
