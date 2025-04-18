@@ -1,10 +1,15 @@
 <?php
-
+include 'config.php';
 include '.includes/header.php';
 
 ?>
 
-<div class="container-xxl flex-grow-1 container-p-y">
+<?php
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
+    // Jika bukan admin
+} else {
+    ?>
+    <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -69,4 +74,6 @@ include '.includes/header.php';
     </div>
 </div>
 
-<?php include '.includes/footer.php'; ?>
+<?php include '.includes/footer.php'; 
+}
+?>
