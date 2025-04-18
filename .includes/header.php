@@ -39,6 +39,7 @@ include "init_session.php";
   </head>
   <body>
     <!-- Layout wrapper -->
+    <?php include '.includes/toast_notification.php'; ?>
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <?php include "sidemenu.php"; ?>

@@ -22,5 +22,5 @@ if(isset($_POST['simpan'])) {
             'message' => 'Pengiriman gagal ditambahkan'
         ];
     }
-    header('Location: pengiriman.php');
+    header('Location: dashboard.php');
 }

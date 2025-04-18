@@ -1,14 +1,14 @@
 <?php
+
 include 'config.php';
-include '.includes/header.php';
+include '.includes/header.php'; 
 
 ?>
 
 <?php
-if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
-    // Jika bukan admin
-} else {
-    ?>
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
+
+<?php } else {  ?>    
     <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
         <div class="card">

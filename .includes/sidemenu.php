@@ -1,7 +1,7 @@
 <!-- Menu -->
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo">
-    <a href="./dashboard-user.php" class="app-brand-link">
+    <a href="./dashboard.php" class="app-brand-link">
       <img class="card-img-top" src="./assets/img/illustrations/gus-ex-logo-new.png" alt="Kamu sedang offline...">
     </a>
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
