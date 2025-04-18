@@ -1,10 +1,15 @@
 <?php
-
+include 'config.php';
 include '.includes/header.php';
 
 ?>
 
-<div class="container-xxl flex-grow-1 container-p-y">
+<?php
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
+    // Jika bukan admin
+} else {
+    ?>
+    <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -48,7 +53,7 @@ include '.includes/header.php';
                                                 <form action="update_role.php" method="POST" class="dropdown-item p-0">
                                                     <input type="hidden" name="pelanggan_id" value="'.$pelanggan["pelanggan_id"].'?>
                                                     <input type="hidden" name="role" value="admin">
-                                                    <button type="submit" class="dropdown-item" name="ubah">Ubah jadi Admin</button>
+                                                    <button type="submit" class="dropdown-item" name="ubah"><i class="bx bx-shield"></i> Ubah jadi Admin</button>
                                                 </form>
                                             </li>
                                         </ul>
@@ -69,4 +74,6 @@ include '.includes/header.php';
     </div>
 </div>
 
-<?php include '.includes/footer.php'; ?>
+<?php include '.includes/footer.php'; 
+}
+?>
