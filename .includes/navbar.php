@@ -23,7 +23,7 @@ navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
-            <a class="dropdown-item" href="profil.php">
+            <a class="dropdown-item" href="./profil_default.php">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
                   <div class="avatar avatar-online">
@@ -39,13 +39,13 @@ navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
           </li>
             <div class="dropdown-divider"></div>
           <li>
-            <a class="dropdown-item" href="auth/profil.php">
+            <a class="dropdown-item" href="./profil_default.php">
               <i class="bx bx-user me-2"></i>
               <span class="align-middle">My Profile</span>
             </a>
           </li>
           <li>
-            <a class="dropdown-item" href="auth/profil.php">
+            <a class="dropdown-item" href="./profil_default.php">
               <i class="bx bx-cog me-2"></i>
               <span class="align-middle">Settings</span>
             </a>
