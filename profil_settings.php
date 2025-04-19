@@ -1,5 +1,6 @@
 <?php
 
+$default = false;
 $no_sidemenu = true;
 include '.includes/profil.php';
 
@@ -23,8 +24,7 @@ include '.includes/profil.php';
               </div>
               
             <div class="mt-6">
-              <button type="submit" class="btn btn-primary me-3">Save changes</button>
-              <button type="reset" class="btn btn-label-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary me-3">Simpan</button>
             </div>
           <input type="hidden"></form>
         </div>
