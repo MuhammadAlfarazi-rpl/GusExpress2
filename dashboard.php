@@ -65,7 +65,7 @@ include '.includes/header.php';
                                         <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
                                 </span>
 
-                                <form method="POST" action="batal.php">
+                                <form method="POST" action="proses_pengiriman.php">
                                 <input type="hidden" name="pengirimanID" value="'.$pengiriman['pengiriman_id'].'">
                                 <button name="delete" type="submit" class="btn btn-outline-danger">Batalkan Pengiriman</button>
                                 </form>

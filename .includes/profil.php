@@ -1,8 +1,15 @@
 <?php 
-
 $no_sidemenu = true;
 include 'header.php';
 
+$pelangganID = $_SESSION['pelanggan_id'];
+$query = "SELECT * FROM pelanggan WHERE pelanggan_id= $pelangganID";
+$result = $conn->query($query);
+if ($result->num_rows > 0) {
+  $pelanggan = $result->fetch_assoc();
+} else {
+  exit();
+}
 
 ?>
 
@@ -32,7 +39,7 @@ include 'header.php';
                     </li>
                     <li class="list-inline-item d-flex align-items-center">
                         <i class="icon-base bx bx-map-pin me-2"></i>
-                            <span class="fw-medium">Alamat: </span>
+                            <span class="fw-medium">Alamat:  <?php echo $pelanggan['alamat']?></span>
                     </li>
               </div>
               <a href="settings.php" class="btn btn-primary mb-1"> <i class="icon-base bx bx-pencil icon-sm me-2"></i>Edit </a>
