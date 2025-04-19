@@ -42,7 +42,9 @@ include "init_session.php";
     <?php include '.includes/toast_notification.php'; ?>
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
+      <?php if (!isset($no_sidebar) || !$no_sidebar): ?>
         <?php include "sidemenu.php"; ?>
+      <?php endif; ?>
         <!-- Layout container -->
         <div class="layout-page">
           <?php include "navbar.php"; ?>
