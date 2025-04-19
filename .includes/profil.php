@@ -43,23 +43,31 @@ include 'header.php';
     </div>
   </div>
 
+  <div class="mb-4"></div>
+
+  <!-- Navbar PIll -->
   <div class="row">
     <div class="col-md-12">
       <div class="nav-align-top">
         <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
-          <li class="nav-item">
-            <a class="nav-link" href="pages-profile-user.html"><i class="icon-base bx bx-user me-1_5 icon-sm"></i> Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="javascript:void(0);"><i class="icon-base bx bx-group me-1_5 icon-sm"></i> Teams</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages-profile-projects.html"><i class="icon-base bx bx-grid-alt me-1_5 icon-sm"></i> Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages-profile-connections.html"><i class="icon-base bx bx-link-alt me-1_5 icon-sm"></i> Connections</a>
-          </li>
+          <?php if (!isset($default) || !$default): ?>
+            <li class="nav-item">
+              <a class="nav-link" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> List Paket</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="profil_settings.php"><i class="icon-base bx bx-cog me-1_5 icon-sm"></i> Settings</a>
+            </li>
+          <?php else: ?>
+            <li class="nav-item">
+              <a class="nav-link active" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> List Paket</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profil_settings.php"><i class="icon-base bx bx-cog me-1_5 icon-sm"></i> Settings</a>
+            </li>
+            <?php endif; ?>
         </ul>
       </div>
     </div>
   </div>
+
+  
