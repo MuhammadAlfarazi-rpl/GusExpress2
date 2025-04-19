@@ -29,15 +29,15 @@
             <div data-i18n="Input groups">Paket</div>
           </a>
         </li>
-        <li class="menu-item">
-          <a href="paket_list.php" class="menu-link">
-            <div data-i18n="Input groups">List Paket</div> 
-          </a>
         </li>
       </ul>
     </li>
 
     <!-- Admin Only -->
+    <?php
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
+  
+  <?php } else {  ?> 
       <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin Only</span></li>
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -53,5 +53,6 @@
         </ul>
       </li>
   </ul>
+  <?php } ?>
 </aside>
 <!-- / Menu -->

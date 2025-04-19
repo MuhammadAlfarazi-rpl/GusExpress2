@@ -1,10 +1,11 @@
 <?php
 
-include '.includes/header.php';
+$no_sidemenu = true;
+include '.includes/profil.php';
 
 ?>
 
-<div class="container-xxl flex-grow-1 container-p-y">
+<div class="flex-grow-1 container-p-y">
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
