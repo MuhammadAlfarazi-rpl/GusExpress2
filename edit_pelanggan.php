@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include("config.php");
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['ganti'])) {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['ganti'])) {
             'message' => 'Gagal memperbarui akun :('
         ];
     }
-    header('Location: profil_settings.php');
+    header('Location: auth/logout.php');
 
 
 } else {

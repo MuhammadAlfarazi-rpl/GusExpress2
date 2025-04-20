@@ -3,7 +3,9 @@
 $default = false;
 $no_sidemenu = true;
 include '.includes/profil.php';
+?>
 
+<?php
 $pelangganID = $_SESSION['pelanggan_id'];
 $query = "SELECT * FROM pelanggan WHERE pelanggan_id= $pelangganID";
 $result = $conn->query($query);
@@ -37,9 +39,50 @@ if ($result->num_rows > 0) {
               </div>
               
             <div class="mt-6">
-              <button type="submit" class="btn btn-primary me-3" name="ganti">Simpan</button>
+              
             </div>
+                        <button
+                          type="button"
+                          class="btn btn-primary ms-2 w-auto"
+                          data-bs-toggle="modal"
+                          data-bs-target="#modalCenter"
+                        >
+                          Update
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle">Yakin Dengan Perubahan?</h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <div><p>Anda harus Re-Login agar perubahan dapat diterapkan</p></div>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-primary me-3" name="ganti">Simpan</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
           <input type="hidden"></form>
         </div>
     </div>
 </div>
+
+<?php
+include '.includes/footer.php';
+?>
