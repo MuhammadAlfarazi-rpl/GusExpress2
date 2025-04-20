@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
             'message' => 'Gagal menghapus paket'
         ];
     }
-    header('Location: paket_list.php');
+    header('Location: dashboard.php');
 
 
     
