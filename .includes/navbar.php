@@ -55,7 +55,7 @@ navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
           </li>
           <li>
             <a class="dropdown-item" href="auth/logout.php">
-              <i class="bx bx-power-off me-2"></i>
+              <i class="bx bxs-door-open me-2"></i>
               <span class="align-middle">Log Out</span>
             </a>
           </li>
