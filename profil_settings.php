@@ -33,7 +33,7 @@ if ($result->num_rows > 0) {
                 <input class="form-control" type="text" name="alamat" value="<?php 
                 if ($pelanggan['alamat'] == TRUE) {
                   echo $pelanggan['alamat'];
-                } else {
+                } else { 
                   echo "Silahkan isi alamatnya terlebih dahulu :D";
                 } ?>">
               </div>

@@ -59,14 +59,14 @@ if ($result->num_rows > 0) {
         <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
           <?php if (!isset($default) || !$default): ?>
             <li class="nav-item">
-              <a class="nav-link" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> List Paket</a>
+              <a class="nav-link" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> Info Paket</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="profil_settings.php"><i class="icon-base bx bx-cog me-1_5 icon-sm"></i> Settings</a>
             </li>
           <?php else: ?>
             <li class="nav-item">
-              <a class="nav-link active" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> List Paket</a>
+              <a class="nav-link active" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> Info Paket</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="profil_settings.php"><i class="icon-base bx bx-cog me-1_5 icon-sm"></i> Settings</a>
