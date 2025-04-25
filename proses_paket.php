@@ -45,7 +45,7 @@ if (isset($_POST["delete"])) {
             'message' => 'Gagal menghapus paket'
         ];
     }
-    header('Location: paket_list.php');
+    header('Location: profil_default.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
@@ -63,16 +63,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
     if($conn->query($queryUpdate) === TRUE){
         $_SESSION['notification'] = [
             'type' => 'primary',
-            'message' => 'Paket berhasil dihapus.'
+            'message' => 'Paket berhasil diperbarui.'
         ];
 
     }else {
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Gagal menghapus paket'
+            'message' => 'Gagal memperbarui paket'
         ];
     }
-    header('Location: dashboard.php');
+    header('Location: profil_default.php');
 
 
     

@@ -24,6 +24,16 @@ include '.includes/header.php';
                             </div>
                          </div>
 
+                         <!-- Lokasi -->
+                         <div class="mb-3">
+                            <label for="post_title" class="form-label">Alamat</label>
+                            <div>
+                            <?php
+                               // Fungsi Lokasi
+                            ?>
+                            </div>
+                         </div>
+
                          <!-- Paket -->
                          <label class="form-label">Pilih Paket</label>
                          <select class="form-select" name="paket">

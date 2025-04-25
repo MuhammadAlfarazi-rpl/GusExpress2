@@ -60,6 +60,7 @@ include '.includes/header.php';
                                 <span class="d-flex flex-column gap-1">
                                         <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
                                         <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
+                                        <span class="text-body"><strong>Asal Paket : </strong></span>
                                         <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                         <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                         <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
