@@ -41,8 +41,11 @@ if ($result->num_rows > 0) {
                         <i class="icon-base bx bx-map-pin me-2"></i>
                             <span class="fw-medium">Alamat:  <?php echo $pelanggan['alamat']?></span>
                     </li>
+                    <li class="list-inline-item d-flex align-items-center">
+                        <i class="icon-base bx bx-briefcase me-2"></i>
+                            <span class="fw-medium">Role:  <?php echo $pelanggan['role']?></span>
+                    </li>
               </div>
-              <a href="settings.php" class="btn btn-primary mb-1"> <i class="icon-base bx bx-pencil icon-sm me-2"></i>Edit </a>
             </div>
           </div>
         </div>
