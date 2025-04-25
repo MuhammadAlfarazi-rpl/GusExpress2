@@ -1,16 +1,9 @@
             <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                <div class="mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  <a href="#" target="_blank" class="footer-link fw-bolder">SMKN 4 Tanjungpinang</a>.
-                  All rights reserved.
-                </div>
-                <div>
-                  <a href="#" target="_blank" class="footer-link me-4">TIM RPL SMKN 4 Tanjungpinang</a>
+            <footer class="footer">
+              <div class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 container-p-x py-4">
+                <div class="footer-brand fw-bold">Gus-Express</div>
+                  <div>
+                  <a href="https://instagram.com/riissescup" class="footer-link me-1">Contact</a>
                 </div>
               </div>
             </footer>
