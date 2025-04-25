@@ -91,6 +91,10 @@ include '.includes/header.php';
     <div class="container-xxl flex-grow-1 container-p-y">
     <?php //Admin Only ?>
     <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h3 class="mb-0 mt-0"><strong>Admin Info</strong></h3>
+            </div>
+            <div class="dropdown-divider"></div>
         <div class="card-widget-separator-wrapper">
             <div class="card-body card-widget-separator">
                 <div class="row gy-4 gy-sm-1">
@@ -134,12 +138,12 @@ include '.includes/header.php';
                         <div class="d-flex align-items-center card-widget-1 border-end pb-4 pb-sm-0">
                             <div class="avatar me-6">
                                 <span class="avatar-initial rounded bg-label-secondary text-heading">
-                                    <i class="icon-base bx bxs-trash icon-26px"></i>
+                                    <i class="icon-base bx bx-shield-quarter icon-26px"></i>
                                 </span>
                             </div>
                             <div class="ms-4">
                                 <h4 class="mb-0"><!-- Total Pengiriman Batal --></h4>
-                                <p class="mb-0">Total Batal</p>
+                                <p class="mb-0">Total Admin</p>
                             </div>
                         </div>
                         <hr class="d-none d-sm-block d-lg-none me-6">
