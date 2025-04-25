@@ -142,7 +142,11 @@ include '.includes/header.php';
                                 </span>
                             </div>
                             <div class="ms-4">
-                                <h4 class="mb-0"><!-- Total Pengiriman Batal --></h4>
+                                <h4 class="mb-0"><?php
+                                $Q_admn = "SELECT * FROM pelanggan WHERE role = 'admin'";
+                                $excAdmn = mysqli_query($conn, $Q_admn);
+                                $jmlAdmn = mysqli_num_rows($excAdmn);
+                                echo $jmlAdmn?></h4>
                                 <p class="mb-0">Total Admin</p>
                             </div>
                         </div>
