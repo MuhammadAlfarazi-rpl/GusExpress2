@@ -34,8 +34,7 @@
     </li>
 
     <!-- Admin Only -->
-    <?php
-if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
+    <?php if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
   
   <?php } else {  ?> 
       <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin Only</span></li>
