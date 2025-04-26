@@ -66,13 +66,13 @@ if (isset($_POST["delete"])) {
         if($result) {
             $_SESSION["notification"] = [
                 'type' => 'primary',
-                'message' => 'Demosi admin berhasil.'
+                'message' => 'Akun berhasil dihapus.'
             ];
         
         } else {
             $_SESSION["notification"] = [
                 'type' => 'danger',
-                'message' => 'Gagal mendemosi admin.'
+                'message' => 'Gagal menghapus akun.'
             ];
         }
         header('Location: list_user.php');
