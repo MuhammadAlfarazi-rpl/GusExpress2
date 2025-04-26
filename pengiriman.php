@@ -2,6 +2,14 @@
 
 include '.includes/header.php';
 
+$pelangganID = $_SESSION['pelanggan_id'];
+$query = "SELECT * FROM pelanggan WHERE pelanggan_id= $pelangganID";
+$result = $conn->query($query);
+if ($result->num_rows > 0) {
+$pelanggan = $result->fetch_assoc();
+} else {
+exit();
+}
 ?>
 
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -29,7 +37,11 @@ include '.includes/header.php';
                             <label for="post_title" class="form-label">Alamat</label>
                             <div>
                             <?php
-                               // Fungsi Lokasi
+                               if (isset($pelanggan['alamat'])) {
+                                echo $pelanggan['alamat'];
+                               } else {
+                                echo "Mohon isi alamat dahulu";
+                               }
                             ?>
                             </div>
                          </div>
