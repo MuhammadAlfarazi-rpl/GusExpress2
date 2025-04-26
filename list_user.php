@@ -53,7 +53,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
                                                 <form action="update_role.php" method="POST" class="dropdown-item p-0">
                                                     <input type="hidden" name="pelanggan_id" value="'.$pelanggan["pelanggan_id"].'?>
                                                     <input type="hidden" name="role" value="admin">
-                                                    <button type="submit" class="dropdown-item" name="ubah"><i class="bx bx-shield me-1"></i> Ubah jadi Admin</button>
+                                                    <button type="submit" class="dropdown-item" name="promote"><i class="bx bx-shield me-1"></i> Ubah jadi Admin</button>
                                                 </form>
                                             </li>
                                             
@@ -61,7 +61,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
                                                 <form action="update_role.php" method="POST" class="dropdown-item p-0">
                                                     <input type="hidden" name="pelanggan_id" value="'.$pelanggan["pelanggan_id"].'?>
                                                     <input type="hidden" name="role" value="user">
-                                                    <button type="submit" class="dropdown-item" name="ubah"><i class="bx bx-user me-1"></i> Ubah jadi User</button>
+                                                    <button type="submit" class="dropdown-item" name="demote"><i class="bx bx-user me-1"></i> Ubah jadi User</button>
                                                 </form>
                                             </li>
                                             <div class="dropdown-divider"></div>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
                                                 <form action="update_role.php" method="POST" class="dropdown-item p-0">
                                                     <input type="hidden" name="pelanggan_id" value="'.$pelanggan["pelanggan_id"].'?>
                                                     <input type="hidden" name="role" value="admin">
-                                                    <button type="submit" class="dropdown-item text-danger" name="ubah"><i class="bx bx-trash me-1"></i> Hapus Akun</button>
+                                                    <button type="submit" class="dropdown-item text-danger" name="delete"><i class="bx bx-trash me-1"></i> Hapus Akun</button>
                                                 </form>
                                             </li>
                                         </ul>

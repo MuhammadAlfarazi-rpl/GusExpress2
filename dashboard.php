@@ -66,11 +66,11 @@ include '.includes/header.php';
                                     <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                     <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
                             </span>
-
+                            
                             <form method="POST" action="proses_pengiriman.php">
                             <input type="hidden" name="pengirimanID" value="'.$pengiriman['pengiriman_id'].'">
                             <button name="delete" type="submit" class="btn btn-outline-danger">Batalkan Pengiriman</button>
-                            </form>
+                            </form>                           
                         </div>
                         </div>
                       </div>
@@ -237,7 +237,8 @@ include '.includes/header.php';
 
                                 <form method="POST" action="proses_pengiriman.php">
                                 <input type="hidden" name="pengirimanID" value="'.$pengiriman['pengiriman_id'].'">
-                                <button name="delete" type="submit" class="btn btn-outline-danger">Batalkan Pengiriman</button>
+                                <button name="delete" type="submit" class="btn btn-outline-danger me-2">Batalkan Pengiriman</button>
+                                <button name="selesai" type="submit" class="btn btn-outline-success">Pengiriman Selesai</button>
                                 </form>
                             </div>
                             </div>
