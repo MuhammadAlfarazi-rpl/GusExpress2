@@ -13,12 +13,12 @@
   <ul class="menu-inner py-1">
     <!-- Forms & Tables -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Pemesanan</span></li>
-    <li class="menu-item">
     <div class="menu-item">
       <a href="history.php" class="menu-link">
         <i class="bx bx-history me-2 menu-icon icon-base"></i>History
       </a>
     </div>
+    <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon icon-base bx bx-box"></i>
         <div data-i18n="Posts">Paket</div>
