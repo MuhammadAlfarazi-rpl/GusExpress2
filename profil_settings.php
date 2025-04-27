@@ -45,13 +45,13 @@ if ($result->num_rows > 0) {
                           type="button"
                           class="btn btn-primary ms-2 w-auto"
                           data-bs-toggle="modal"
-                          data-bs-target="#modalCenter"
+                          data-bs-target="#modalCenter1"
                         >
                           Update
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                        <div class="modal fade" id="modalCenter1" tabindex="-1" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -65,7 +65,7 @@ if ($result->num_rows > 0) {
                               </div>
                               <div class="modal-body">
                                 <div class="row">
-                                  <div class="col mb-3">
+                                  <div class="col mb-2">
                                     <div><p>Anda harus Re-Login agar perubahan dapat diterapkan</p></div>
                                 </div>
                               </div>
@@ -81,6 +81,39 @@ if ($result->num_rows > 0) {
           <input type="hidden"></form>
         </div>
     </div>
+    <div class="card mt-3">
+        <h5 class="card-header">Hapus Akun</h5>
+        <div class="card-body">
+          <div class="mb-6 col-12 mb-0">
+            <div class="alert alert-warning">
+              <h5 class="alert-heading mb-1">Anda yakin anda mau menghapus akun?</h5>
+              <p class="mb-0">Setelah akun anda dihapus, anda tidak bisa mengembalikannya.</p>
+            </div>
+          </div>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalCenter2">Deactivate Account</button>
+          <input type="hidden"></form>
+        </div>
+      </div>
+          <div class="modal fade" id="modalCenter2" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Yakin Untuk Menghapus Akun?</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col mb-2">
+                              <div><p>Ini Merupakan Kofirmasi Terakhir. Ingat, Tidak Ada Putar Balik Setelah Ini</p></div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-danger me-3" name="hapus">Hapus</button>
+                        </div>
+                      </div>
+                  </div>
+                </div>
 </div>
 
 <?php
