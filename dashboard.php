@@ -18,7 +18,8 @@ include '.includes/header.php';
 
             $query = "SELECT 
                     pengiriman.*, 
-                    pelanggan.nama as user_name, 
+                    pelanggan.nama as user_name,
+                    pelanggan.alamat,
                     paket.nama_paket, 
                     paket.tujuan, 
                     paket.berat, 
@@ -60,8 +61,9 @@ include '.includes/header.php';
                         <div class="accordion-body">
                             <span class="d-flex flex-column gap-1">
                                     <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
+                                    <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                     <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
-                                    <span class="text-body"><strong>Asal Paket : </strong></span>
+                                    <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>
                                     <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                     <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                     <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
@@ -185,7 +187,8 @@ include '.includes/header.php';
 
                 $query = "SELECT 
                         pengiriman.*, 
-                        pelanggan.nama as user_name, 
+                        pelanggan.nama as user_name,
+                        pelanggan.alamat, 
                         paket.nama_paket, 
                         paket.tujuan, 
                         paket.berat, 
@@ -195,7 +198,8 @@ include '.includes/header.php';
                         FROM pengiriman
                         INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                         LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
-                        LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id";
+                        LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
+                        WHERE pengiriman.status = 'mengirim'";
 
                 $exec = mysqli_query($conn, $query);
 
@@ -226,10 +230,11 @@ include '.includes/header.php';
                             <div class="accordion-body">
                                 <span class="d-flex flex-column gap-1">
                                         <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
+                                        <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                         <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
                                         <span class="text-body"><strong>Nama Pelanggan : </strong>'.$pengiriman["user_name"].'</span>
                                         <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
-                                        <span class="text-body"><strong>Asal Paket : </strong></span>
+                                        <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>
                                         <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                         <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                         <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
@@ -238,6 +243,7 @@ include '.includes/header.php';
                                 <form method="POST" action="proses_pengiriman.php">
                                 <input type="hidden" name="pengirimanID" value="'.$pengiriman['pengiriman_id'].'">
                                 <button name="delete" type="submit" class="btn btn-outline-danger me-2">Batalkan Pengiriman</button>
+                                <input type="hidden" name="pengirimanID" value="'.$pengiriman['pengiriman_id'].'">
                                 <button name="selesai" type="submit" class="btn btn-outline-success">Pengiriman Selesai</button>
                                 </form>
                             </div>
