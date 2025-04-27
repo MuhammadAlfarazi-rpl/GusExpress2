@@ -4,7 +4,7 @@
   <div class="card-body">
     <!-- Logo -->
     <div>
-      <img class="card-img-top" src="../assets/img/illustrations/gus-ex-logo-new.png" alt="Kamu sedang offline...">
+      <img class="card-img-top img-fluid w-50 mx-auto d-block" src="../assets/img/illustrations/gus-ex-logo-new.png" alt="Kamu sedang offline...">
     </div>
     <!-- /Logo -->
     <form action="register_process.php" class="mb-3" method="POST">
@@ -13,8 +13,12 @@
         <input type="text" class="form-control" name="username" placeholder="Masukkan Username" autofocus/>
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label">Nama</label>
+        <label for="emai" class="form-label">Nama</label>
         <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Alamat</label>
+        <input type="text" class="form-control" name="nama" placeholder="Masukkan Alamat" />
       </div>
       <div class="mb-3 form-password-toggle">
         <label class="form-label" for="password">Password</label>
