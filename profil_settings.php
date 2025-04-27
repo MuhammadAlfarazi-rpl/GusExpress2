@@ -81,6 +81,10 @@ if ($result->num_rows > 0) {
           <input type="hidden"></form>
         </div>
     </div>
+
+    <?php if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { 
+    ?>
+
     <div class="card mt-3">
         <h5 class="card-header">Hapus Akun</h5>
         <div class="card-body">
@@ -109,13 +113,19 @@ if ($result->num_rows > 0) {
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+                          <form action="edit_pelanggan.php" method="POST">
+                          <input type="hidden" name="pelangganID" value="<?php echo $pelanggan['pelanggan_id']?>">
                             <button type="submit" class="btn btn-danger me-3" name="hapus">Hapus</button>
+                          </form>
                         </div>
                       </div>
                   </div>
                 </div>
 </div>
 
-<?php
+<?php } else {
+
+}
+
 include '.includes/footer.php';
 ?>
