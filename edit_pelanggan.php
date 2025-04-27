@@ -27,3 +27,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['ganti'])) {
 } else {
 
 }
+
+if (isset($_POST['hapus'])) {
+    $pelangganID = $_POST['pelangganID'];
+
+    $sql = "DELETE FROM pelanggan WHERE pelanggan_id = '$pelangganID'";
+    $result = $conn->query($sql);
+
+    if($result){
+        $_SESSION['notification'] = [
+            'type' => 'primary',
+            'message' => 'Berhasil deactivate akun!'
+        ];
+
+    }else {
+        $_SESSION['notification'] = [
+            'type' => 'danger',
+            'message' => 'Deactivate akun gagal.'
+        ];
+    }
+    header('Location: auth/login.php');
+}

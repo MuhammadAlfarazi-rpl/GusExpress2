@@ -17,7 +17,8 @@ include '.includes/header.php';
 
                 $query = "SELECT 
                         pengiriman.*, 
-                        pelanggan.nama as user_name, 
+                        pelanggan.nama as user_name,
+                        pelanggan.alamat, 
                         paket.nama_paket, 
                         paket.tujuan, 
                         paket.berat, 
@@ -63,7 +64,7 @@ include '.includes/header.php';
                                         <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
                                         <span class="text-body"><strong>Nama Pelanggan : </strong>'.$pengiriman["user_name"].'</span>
                                         <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
-                                        <span class="text-body"><strong>Asal Paket : </strong></span>
+                                        <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman['alamat'].'</span>
                                         <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                         <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                         <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
@@ -102,7 +103,8 @@ include '.includes/header.php';
 
         $query = "SELECT 
                 pengiriman.*, 
-                pelanggan.nama as user_name, 
+                pelanggan.nama as user_name,
+                pelanggan.alamat, 
                 paket.nama_paket, 
                 paket.tujuan, 
                 paket.berat, 
@@ -148,7 +150,7 @@ include '.includes/header.php';
                                 <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
                                 <span class="text-body"><strong>Nama Pelanggan : </strong>'.$pengiriman["user_name"].'</span>
                                 <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
-                                <span class="text-body"><strong>Asal Paket : </strong></span>
+                                <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman['alamat'].'</span>
                                 <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                 <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                 <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>

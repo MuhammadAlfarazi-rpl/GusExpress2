@@ -72,13 +72,13 @@ if(isset($_POST['deleteHistory'])) {
     if ($exec) {
         $_SESSION['notification'] = [
             'type' => 'primary',
-            'message' => 'Paket berhasil dihapus.'
+            'message' => 'History berhasil dihapus.'
         ];
 
     }else {
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Paket gagal ditambahkan'
+            'message' => 'Gagal menghapus history.'
         ];
     }
     header('Location: dashboard.php');

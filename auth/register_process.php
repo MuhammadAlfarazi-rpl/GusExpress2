@@ -6,9 +6,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $name = $_POST["nama"];
     $password = $_POST["password"];
+    $alamat = $_POST["alamat"];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO pelanggan (username, nama, password) VALUES ('$username', '$name', '$hashedPassword')";
+    $sql = "INSERT INTO pelanggan (username, nama, password, alamat) VALUES ('$username', '$name', '$hashedPassword', '$alamat')";
 
     if($conn->query($sql) === TRUE) {
         $_SESSION["notification"] = [
