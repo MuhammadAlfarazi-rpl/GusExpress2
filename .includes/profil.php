@@ -1,13 +1,22 @@
 <?php 
+// Menetapkan variabel untuk menonaktifkan tampilan sidemenu
 $no_sidemenu = true;
+// Meng-include file header.php
 include 'header.php';
 
+// Mengambil ID pelanggan dari sesi
 $pelangganID = $_SESSION['pelanggan_id'];
+// Membuat query untuk mengambil data pelanggan berdasarkan pelanggan_id
 $query = "SELECT * FROM pelanggan WHERE pelanggan_id= $pelangganID";
+
+// Menjalankan query untuk mendapatkan hasil dari database
 $result = $conn->query($query);
+// Mengecek apakah ada data pelanggan yang ditemukan
 if ($result->num_rows > 0) {
+  // Mengambil data pelanggan sebagai fetch_assoc jika data ditemukan
   $pelanggan = $result->fetch_assoc();
 } else {
+  // Jika tidak ada data pelanggan, berhenti (exit) eksekusi
   exit();
 }
 
@@ -31,18 +40,22 @@ if ($result->num_rows > 0) {
                 <ul class="list-inline mb-0 d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center gap-4 mt-4">
                     <li class="list-inline-item d-flex align-items-center">
                         <i class="icon-base bx bx-tag-alt me-2"></i>
+                        <!-- Menampilkan nama berdasarkan session -->
                             <span class="fw-medium">Nama Asli: <?php echo $nama?></span>
                     </li>
                     <li class="list-inline-item d-flex align-items-center">
                         <i class="icon-base bx bx-hash me-2"></i>
+                        <!-- Menampilkan userID berdasarkan session -->
                             <span class="fw-medium">User ID: <?php echo $user_id?></span>
                     </li>
                     <li class="list-inline-item d-flex align-items-center">
                         <i class="icon-base bx bx-map-pin me-2"></i>
+                        <!-- Menampilkan alamat berdasarkan session -->
                             <span class="fw-medium">Alamat:  <?php echo $pelanggan['alamat']?></span>
                     </li>
                     <li class="list-inline-item d-flex align-items-center">
                         <i class="icon-base bx bx-briefcase me-2"></i>
+                        <!-- Menampilkan role berdasarkan session -->
                             <span class="fw-medium">Role:  <?php echo $pelanggan['role']?></span>
                     </li>
               </div>
@@ -60,6 +73,8 @@ if ($result->num_rows > 0) {
     <div class="col-md-12">
       <div class="nav-align-top">
         <ul class="nav nav-pills flex-column flex-sm-row mb-6 gap-sm-0 gap-2">
+        <!-- Mengecek apakah variabel $default untuk laman default profil belum diset / nilainya tidak true
+        Jika salah satu dari kondisi tersebut terpenuhi, maka blok kode berikutnya akan dieksekusi -->
           <?php if (!isset($default) || !$default): ?>
             <li class="nav-item">
               <a class="nav-link" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> Info Paket</a>
@@ -67,6 +82,7 @@ if ($result->num_rows > 0) {
             <li class="nav-item">
               <a class="nav-link active" href="profil_settings.php"><i class="icon-base bx bx-cog me-1_5 icon-sm"></i> Settings</a>
             </li>
+            <!-- Jika tidak ada kondisi yang terpenuhi, maka blok kode berikut ini yang akan di eksekusi -->
           <?php else: ?>
             <li class="nav-item">
               <a class="nav-link active" href="profil_default.php"><i class="icon-base bx bx-package me-1_5 icon-sm"></i> Info Paket</a>
