@@ -45,19 +45,24 @@ include '.includes/header.php';
                          </div>
 
                         <!-- Nama Biaya -->
-                        <div class="mb-3">
-                        <label for="post_title" class="form-label">Biaya</label>    
-                        <div class="input-group">                   
-                        <span class="input-group-text" id="basic-addon11">Rp.</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="x.xxx.xxx"
-                          aria-describedby="basic-addon11"
-                          name="biaya"
-                        />
-                      </div>
-                         </div>
+                        <label class="form-label">Tipe Ekspedisi</label>
+                        <div class="input-group">
+
+                        <select class="form-select" name="satuan_id" required>
+                        <option value="" selected disabled>Pilih Ekspedisi</option>
+                        <?php
+
+                            require 'config.php'; 
+                            $query = "SELECT * FROM harga";
+                            $result = $conn->query($query);
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<option value='" . $row["id_harga"] . "'>" . $row["nama_harga"] . "</option>";
+                                }
+                        }
+                        ?>
+                        </select>
+                        </div>
 
 
                         <!-- Deskripsi -->
