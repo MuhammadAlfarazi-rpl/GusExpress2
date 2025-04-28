@@ -228,7 +228,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
         <div class="card-body">
             <?php
 
-<<<<<<< HEAD
                 $query = "SELECT 
                         pengiriman.*, 
                         pelanggan.nama as user_name,
@@ -247,25 +246,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                         LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
                         LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
                         WHERE pengiriman.status = 'mengirim'";
-=======
-            // Membuat query untuk mengambil data pengiriman dari database
-            $query = "SELECT 
-                    pengiriman.*, 
-                    pelanggan.nama as user_name,
-                    pelanggan.alamat,
-                    paket.nama_paket, 
-                    paket.tujuan, 
-                    paket.berat, 
-                    paket.satuan_id, 
-                    paket.detail,
-                    satuan.satuan_nama
-                    FROM pengiriman
-                    INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
-                    LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
-                    LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
-                    WHERE pengiriman.pelanggan_id = $user_id";
-                    // Hanya mengambil pengiriman yang memiliki 'pelanggan_id' sesuai dengan user yang sedang login
->>>>>>> 1734e871c3c15dffde1a8e228787cd7b069fba41
 
             // Menjalankan $query ke database menggunakan koneksi ($conn)
             // Hasil eksekusinya disimpan dalam variabel $exec
