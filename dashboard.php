@@ -25,11 +25,14 @@ include '.includes/header.php';
                     paket.berat, 
                     paket.satuan_id, 
                     paket.detail,
-                    satuan.satuan_nama
+                    satuan.satuan_nama,
+                    paket.id_harga,
+                    biaya.nama_harga
                     FROM pengiriman
                     INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                     LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
                     LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
+                    LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
                     WHERE pengiriman.pelanggan_id = $user_id";
 
             $exec = mysqli_query($conn, $query);
@@ -63,6 +66,7 @@ include '.includes/header.php';
                                     <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
                                     <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                     <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
+                                    <span class="text-body"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["nama_harga"].'</span>
                                     <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>
                                     <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                     <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
@@ -127,7 +131,7 @@ include '.includes/header.php';
                             </div>
                             <div class="ms-4">
                                 <h4 class="mb-0"><?php 
-                                $Q_pengiriman = "SELECT * FROM pengiriman";
+                                $Q_pengiriman = "SELECT * FROM pengiriman WHERE status = 'mengirim'";
                                 $excPeng = mysqli_query($conn, $Q_pengiriman);
                                 $jmlPengiriman = mysqli_num_rows($excPeng);
                                 echo $jmlPengiriman?></h4>
@@ -194,11 +198,14 @@ include '.includes/header.php';
                         paket.berat, 
                         paket.satuan_id, 
                         paket.detail,
-                        satuan.satuan_nama
+                        satuan.satuan_nama,
+                        paket.id_harga,
+                        biaya.nama_harga
                         FROM pengiriman
                         INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                         LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
                         LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
+                        LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
                         WHERE pengiriman.status = 'mengirim'";
 
                 $exec = mysqli_query($conn, $query);
@@ -232,6 +239,7 @@ include '.includes/header.php';
                                         <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
                                         <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                         <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
+                                        <span class="text-body"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["nama_harga"].'</span>
                                         <span class="text-body"><strong>Nama Pelanggan : </strong>'.$pengiriman["user_name"].'</span>
                                         <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
                                         <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>

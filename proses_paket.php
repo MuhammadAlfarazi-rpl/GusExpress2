@@ -8,11 +8,11 @@ if (isset($_POST['simpan'])) {
     $beratBarang = $_POST['berat'];
     $satuan = $_POST['satuan_id'];
     $tujuan = $_POST['tujuan'];
-    $biaya = $_POST['biaya'];
+    $biaya = $_POST['id_harga'];
     $detail = $_POST['detail'];
     $pelangganID = $_SESSION["pelanggan_id"];
 
-    $query = "INSERT INTO paket (nama_paket, berat, satuan_id, tujuan, biaya, detail, pelanggan_id) VALUES ('$namaBarang','$beratBarang','$satuan','$tujuan','$biaya','$detail','$pelangganID')";
+    $query = "INSERT INTO paket (nama_paket, berat, satuan_id, tujuan, id_harga, detail, pelanggan_id) VALUES ('$namaBarang','$beratBarang','$satuan','$tujuan','$biaya','$detail','$pelangganID')";
 
     if($conn->query($query) === TRUE) {
         $_SESSION["notification"] = [
@@ -50,15 +50,16 @@ if (isset($_POST["delete"])) {
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
 
+    $paketId = $_POST['id_paket'];
     $namaBarang = $_POST['nama_barang'];
     $beratBarang = $_POST['berat'];
     $satuan = $_POST['satuan_id'];
     $tujuan = $_POST['tujuan'];
-    $biaya = $_POST['biaya'];
+    $biaya = $_POST['id_harga'];
     $detail = $_POST['detail'];
     $pelangganID = $_SESSION["pelanggan_id"];
 
-    $queryUpdate = "UPDATE paket SET nama_paket = '$namaBarang', berat = '$beratBarang', satuan_id = '$satuan', tujuan = '$tujuan', biaya = '$biaya', pelanggan_id = '$pelangganID', detail = '$detail'";
+    $queryUpdate = "UPDATE paket SET nama_paket = '$namaBarang', berat = '$beratBarang', satuan_id = '$satuan', tujuan = '$tujuan', id_harga = '$biaya', pelanggan_id = '$pelangganID', detail = '$detail' WHERE paket_id = '$paketId'";
 
     if($conn->query($queryUpdate) === TRUE){
         $_SESSION['notification'] = [

@@ -2,7 +2,7 @@
 include 'config.php';
 include '.includes/header.php';
 
-$paketEdit = $_GET['paket_id'];
+$paketEdit = $_GET['id_paket'];
 
 $query = "SELECT * FROM paket WHERE paket_id = $paketEdit";
 $result = $conn->query($query);
@@ -21,6 +21,7 @@ if ($result->num_rows > 0) {
             <div class="card mb-4">
                 <div class="card-body">
                     <form method="POST" action="proses_paket.php" enctype="multipart/form-data">
+                        <input type="hidden" name="id_paket" value="<?php echo $paketEdit;?>">
                         <!-- Nama Barang / Paket -->
                          <div class="mb-3">
                             <label for="post_title" class="form-label">Nama Barang</label>
@@ -57,20 +58,26 @@ if ($result->num_rows > 0) {
                          </div>
 
                         <!-- Nama Biaya -->
-                        <div class="mb-3">
-                        <label for="post_title" class="form-label">Biaya</label>    
-                        <div class="input-group">                   
-                        <span class="input-group-text" id="basic-addon11">Rp.</span>
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder="x.xxx.xxx"
-                          aria-describedby="basic-addon11"
-                          name="biaya"
-                          value="<?php echo $paket['biaya']?>"
-                        />
-                      </div>
-                         </div>
+                        <label class="form-label">Tipe Ekspedisi</label>
+                        <div class="input-group">
+
+                    
+                        <select class="form-select" name="id_harga" required>
+                        <option value="" selected disabled>Pilih Ekspedisi</option>
+                        <?php
+
+                            require 'config.php'; 
+                            $queryHarga = "SELECT * FROM biaya";
+                            $resultHarga = $conn->query($queryHarga);
+                            if ($result->num_rows > 0) {
+                                while ($row = $resultHarga->fetch_assoc()) {
+                                    $selected = ($row['id_harga'] == $paket['id_harga']) ? "selected" : "";
+                                    echo "<option value='" . $row["id_harga"] . "'$selected>" . $row["nama_harga"] . "</option>";
+                                }
+                        }
+                        ?>
+                        </select>
+                        </div>
 
 
                         <!-- Deskripsi -->
@@ -80,7 +87,7 @@ if ($result->num_rows > 0) {
                             </textarea>
                          </div>
                          <!-- Submit -->
-                          <button type="submit" name="update" class="btn btn-primary">Update</button>
+                         <button type="submit" name="update" class="btn btn-primary">Update</button>
                     </form>
                 </div>
         </div>
