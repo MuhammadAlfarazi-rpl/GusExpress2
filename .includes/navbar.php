@@ -31,7 +31,9 @@ navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
                   </div>
                 </div>
                 <div class="flex-grow-1">
+                  <!-- Menampilkan username dalam session yang telah disimpan -->
                   <span class="fw-semibold d-block"><?php echo $username; ?></span>
+                  <!-- Menampilkan role dalam session yang telah disimpan dengan teks kecil -->
                   <small class="text-muted"><?php echo $role; ?></small>
                 </div>
               </div>

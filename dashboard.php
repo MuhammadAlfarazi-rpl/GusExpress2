@@ -276,6 +276,16 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                 <span class="d-flex flex-column gap-1">
                                     <span class="text-heading fw-bold fs-7"><strong>'.$pengiriman["nama_paket"].'</strong></span>
                                     <span class="text-body">Tujuan : '.$pengiriman["tujuan"].'</span>
+                                        <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
+                                        <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
+                                        <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
+                                        <span class="text-body"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["nama_harga"].'</span>
+                                        <span class="text-body"><strong>Nama Pelanggan : </strong>'.$pengiriman["user_name"].'</span>
+                                        <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
+                                        <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>
+                                        <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
+                                        <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
+                                        <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
                                 </span>
                             </div>
                         </div>

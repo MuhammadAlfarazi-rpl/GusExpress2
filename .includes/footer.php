@@ -1,8 +1,10 @@
             <!-- Footer -->
             <footer class="footer">
               <div class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 container-p-x py-4">
+                <!-- Brand 'Gus-Express' di footer -->
                 <div class="footer-brand fw-bold">Gus-Express</div>
                   <div>
+                  <!-- Link menuju Instagram untuk menghubungi Admin -->
                   <a href="https://instagram.com/riissescup" class="footer-link me-1">Contact</a>
                 </div>
               </div>
