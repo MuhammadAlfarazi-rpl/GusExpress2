@@ -40,9 +40,15 @@
 
 
     <!-- Admin Only -->
+    <!--Mengecek apakah variabel 'username' belum diset di sesi atau jika role bukan 'admin' 
+    Jika salah satu kondisi ini benar, maka kode di dalam blok if akan dieksekusi -->
     <?php if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
-  
-  <?php } else {  ?> 
+
+      <!-- Null -->
+      <!-- Tidak menampilkan bagian ini karena hanya khusus user dengan role admin -->
+
+      <!-- Kode dibawah akan dieksekusi jika pengguna sudah login dan role-nya adalah 'admin' -->
+    <?php } else {  ?> 
       <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin Only</span></li>
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">

@@ -42,7 +42,9 @@ include "init_session.php";
     <?php include '.includes/toast_notification.php'; ?>
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
+        <!-- Mengecek apakah variabel $no_sidemenu tidak diset atau nilainya bukan true -->
       <?php if (!isset($no_sidemenu) || !$no_sidemenu): ?>
+        <!-- Jika salah satu kondisi terpenuhi, maka file 'sidemenu.php' akan di-include -->
         <?php include "sidemenu.php"; ?>
       <?php endif; ?>
         <!-- Layout container -->
