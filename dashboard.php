@@ -33,7 +33,8 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                     paket.detail,
                     satuan.satuan_nama,
                     paket.id_harga,
-                    biaya.nama_harga
+                    biaya.nama_harga,
+                    biaya.nama_harga_ekspedisi
                     FROM pengiriman
                     INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                     LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
@@ -85,7 +86,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                     <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                     <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                     <span class="text-body mb-2"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
-                                    <span class="text-body mb-3"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["detail"].' </span>
+                                    <span class="text-body mb-3"><strong>Total Harga : </strong>'.$pengiriman["nama_harga_ekspedisi"].' </span>
                             </span>
                             
                             <form method="POST" action="proses_pengiriman.php">
@@ -239,7 +240,8 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                         paket.detail,
                         satuan.satuan_nama,
                         paket.id_harga,
-                        biaya.nama_harga
+                        biaya.nama_harga,
+                        biaya.nama_harga_ekspedisi
                         FROM pengiriman
                         INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                         LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
@@ -272,6 +274,8 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                     </div>
                                 </div>
                                 <span class="d-flex flex-column gap-1">
+                                    <span class="text-heading fw-bold fs-7"><strong>'.$pengiriman["nama_paket"].'</strong></span>
+                                    <span class="text-body">Tujuan : '.$pengiriman["tujuan"].'</span>
                                         <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
                                         <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                         <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
@@ -293,16 +297,18 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                     <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
                                     <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                     <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
+                                    <span class="text-body"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["nama_harga"].'</span>
                                     <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>
                                     <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                     <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                     <span class="text-body mb-2"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
-                                    <span class="text-body mb-3"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["detail"].'</span>
+                                    <span class="text-body mb-3"><strong>Total Harga : </strong>'.$pengiriman["nama_harga_ekspedisi"].' </span>
                             </span>
                             
                             <form method="POST" action="proses_pengiriman.php">
                             <input type="hidden" name="pengirimanID" value="'.$pengiriman['pengiriman_id'].'">
-                            <button name="delete" type="submit" class="btn btn-outline-danger">Batalkan Pengiriman</button>
+                            <button name="delete" type="submit" class="btn btn-outline-danger me-2">Batalkan Pengiriman</button>
+                            <button name="selesai" type="submit" class="btn btn-outline-success">Selesaikan Pengiriman</button>
                             </form>                           
                         </div>
                         </div>
