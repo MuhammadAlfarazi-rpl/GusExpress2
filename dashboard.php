@@ -272,7 +272,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                     </div>
                                 </div>
                                 <span class="d-flex flex-column gap-1">
-<<<<<<< HEAD
                                         <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
                                         <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                         <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
@@ -283,10 +282,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                         <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                         <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                         <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
-=======
-                                    <span class="text-heading fw-bold fs-7"><strong>'.$pengiriman["nama_paket"].'</strong></span>
-                                    <span class="text-body">Tujuan : '.$pengiriman["tujuan"].'</span>
->>>>>>> 1734e871c3c15dffde1a8e228787cd7b069fba41
                                 </span>
                             </div>
                         </div>
