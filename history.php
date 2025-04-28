@@ -96,7 +96,7 @@ include '.includes/header.php';
 <div class="card">
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h3><strong>Semua Paket</strong></h3>
+        <h3><strong>History Pengiriman Paket</strong></h3>
     </div>
     <div class="card-body">
         <?php

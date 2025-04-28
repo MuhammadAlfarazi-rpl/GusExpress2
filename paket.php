@@ -48,7 +48,8 @@ include '.includes/header.php';
                         <label class="form-label">Tipe Ekspedisi</label>
                         <div class="input-group">
 
-                        <select class="form-select" name="satuan_id" required>
+                    
+                        <select class="form-select" name="id_harga" required>
                         <option value="" selected disabled>Pilih Ekspedisi</option>
                         <?php
 

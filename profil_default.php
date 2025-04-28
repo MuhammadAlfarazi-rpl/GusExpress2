@@ -19,9 +19,11 @@ include '.includes/profil.php';
 
                 $query = "SELECT
                 paket.*,
-                satuan.satuan_nama
+                satuan.satuan_nama,
+                biaya.nama_harga
                 FROM paket
                 LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
+                LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
                 WHERE paket.pelanggan_id = $user_id";
 
                 $exec = mysqli_query($conn, $query);
@@ -56,7 +58,7 @@ include '.includes/profil.php';
                                         <span class="text-body"><strong>ID Pengiriman : </strong>'.$paket["paket_id"].'</span>
                                         <span class="text-body"><strong>Tujuan : </strong>'.$paket["tujuan"].'</span>
                                         <span class="text-body"><strong>Berat Barang : </strong>'.$paket["berat"]." ". $paket["satuan_nama"].'</span>
-                                        <span class="text-body mb-3"><strong>Biaya : </strong>'.$paket["biaya"].'</span>
+                                        <span class="text-body mb-3"><strong>Tipe Ekspedisi : </strong>'.$paket["nama_harga"].'</span>
                                         <span class="text-body mb-3"><strong>Pelanggan ID : </strong>'.$paket["pelanggan_id"].'</span>
                                         <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$paket["detail"].'</span>
                                 </span>
@@ -65,7 +67,7 @@ include '.includes/profil.php';
                                         <form method="POST" action="proses_paket.php">
                                             <input type="hidden" name="paket_id" value="'.$paket['paket_id'].'">
                                         <button name="delete" type="submit" class="btn btn-outline-danger"> <i class="bx bx-trash" ></i> Hapus Paket</button>
-                                        <a href="edit_paket.php?paket_id= '.$paket['paket_id'].'"><button type="button" class="btn btn-primary"><i class="bx bx-edit-alt"></i>Edit</button></a>
+                                        <a href="edit_paket.php?id_paket= '.$paket['paket_id'].'"><button type="button" class="btn btn-primary"><i class="bx bx-edit-alt"></i>Edit</button></a>
                                         </form>  
                                 </span>
                                 

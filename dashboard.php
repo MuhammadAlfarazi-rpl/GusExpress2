@@ -31,11 +31,14 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                     paket.berat, 
                     paket.satuan_id, 
                     paket.detail,
-                    satuan.satuan_nama
+                    satuan.satuan_nama,
+                    paket.id_harga,
+                    biaya.nama_harga
                     FROM pengiriman
                     INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                     LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
                     LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
+                    LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
                     WHERE pengiriman.pelanggan_id = $user_id";
                     // Hanya mengambil pengiriman yang memiliki 'pelanggan_id' sesuai dengan user yang sedang login
 
@@ -77,6 +80,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                     <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
                                     <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
                                     <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
+                                    <span class="text-body"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["nama_harga"].'</span>
                                     <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>
                                     <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                     <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
@@ -152,9 +156,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                             <div class="ms-4">
                                 <!-- Menampilkan jumlah total pengiriman yang ada di database -->
                                 <h4 class="mb-0"><?php 
-                                 // Membuat query untuk mengambil semua data dari tabel 'pengiriman'
-                                $Q_pengiriman = "SELECT * FROM pengiriman";
-                                // Menjalankan query ke database menggunakan koneksi $conn
+                                $Q_pengiriman = "SELECT * FROM pengiriman WHERE status = 'mengirim'";
                                 $excPeng = mysqli_query($conn, $Q_pengiriman);
                                 // Menghitung jumlah baris (pengiriman) yang berhasil diambil
                                 $jmlPengiriman = mysqli_num_rows($excPeng);
@@ -226,6 +228,26 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
         <div class="card-body">
             <?php
 
+<<<<<<< HEAD
+                $query = "SELECT 
+                        pengiriman.*, 
+                        pelanggan.nama as user_name,
+                        pelanggan.alamat, 
+                        paket.nama_paket, 
+                        paket.tujuan, 
+                        paket.berat, 
+                        paket.satuan_id, 
+                        paket.detail,
+                        satuan.satuan_nama,
+                        paket.id_harga,
+                        biaya.nama_harga
+                        FROM pengiriman
+                        INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
+                        LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
+                        LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
+                        LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
+                        WHERE pengiriman.status = 'mengirim'";
+=======
             // Membuat query untuk mengambil data pengiriman dari database
             $query = "SELECT 
                     pengiriman.*, 
@@ -243,6 +265,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                     LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
                     WHERE pengiriman.pelanggan_id = $user_id";
                     // Hanya mengambil pengiriman yang memiliki 'pelanggan_id' sesuai dengan user yang sedang login
+>>>>>>> 1734e871c3c15dffde1a8e228787cd7b069fba41
 
             // Menjalankan $query ke database menggunakan koneksi ($conn)
             // Hasil eksekusinya disimpan dalam variabel $exec
@@ -269,8 +292,21 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                     </div>
                                 </div>
                                 <span class="d-flex flex-column gap-1">
+<<<<<<< HEAD
+                                        <span class="text-body fw-bold fs-4"><strong>Detail :</strong></span>
+                                        <span class="text-body"><strong>STATUS PAKET : </strong>'.$pengiriman["status"].'</span>
+                                        <span class="text-body"><strong>ID Pelanggan : </strong>'.$pengiriman["pelanggan_id"].'</span>
+                                        <span class="text-body"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["nama_harga"].'</span>
+                                        <span class="text-body"><strong>Nama Pelanggan : </strong>'.$pengiriman["user_name"].'</span>
+                                        <span class="text-body"><strong>ID Pengiriman : </strong>'.$pengiriman["pengiriman_id"].'</span>
+                                        <span class="text-body"><strong>Asal Paket : </strong>'.$pengiriman["alamat"].'</span>
+                                        <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
+                                        <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
+                                        <span class="text-body mb-3"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
+=======
                                     <span class="text-heading fw-bold fs-7"><strong>'.$pengiriman["nama_paket"].'</strong></span>
                                     <span class="text-body">Tujuan : '.$pengiriman["tujuan"].'</span>
+>>>>>>> 1734e871c3c15dffde1a8e228787cd7b069fba41
                                 </span>
                             </div>
                         </div>
