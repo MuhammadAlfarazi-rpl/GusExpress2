@@ -86,7 +86,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                                     <span class="text-body"><strong>Tanggal Pengiriman : </strong>'.$pengiriman["tanggal_pengiriman"].'</span>
                                     <span class="text-body"><strong>Berat Barang : </strong>'.$pengiriman["berat"]." ". $pengiriman["satuan_nama"].'</span>
                                     <span class="text-body mb-2"><strong>Detail Barang : </strong>'.$pengiriman["detail"].'</span>
-                                    <span class="text-body mb-3"><strong>Tipe Ekspedisi : </strong>'.$pengiriman["nama_harga_ekspedisi"].' </span>
+                                    <span class="text-body mb-3"><strong>Total Harga : </strong>'.$pengiriman["nama_harga_ekspedisi"].' </span>
                             </span>
                             
                             <form method="POST" action="proses_pengiriman.php">
