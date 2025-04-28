@@ -53,7 +53,7 @@ include '.includes/header.php';
                         <?php
 
                             require 'config.php'; 
-                            $query = "SELECT * FROM harga";
+                            $query = "SELECT * FROM biaya";
                             $result = $conn->query($query);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
