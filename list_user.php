@@ -18,7 +18,8 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
             <div class="card-body">
                 <?php
 
-                $query = "SELECT * FROM pelanggan";
+                $pelangganID = $_SESSION["pelanggan_id"];
+                $query = "SELECT * FROM pelanggan where username != 'Admin' AND pelanggan_id != '$pelangganID'";
 
                 $exec = mysqli_query($conn, $query);
 
