@@ -33,6 +33,7 @@ if ($result->num_rows > 0) {
                         <div class="input-group">
                         <input type="text" class="form-control" name="berat" value="<?php echo $paket['berat']?>" required />
 
+                        <!-- Opsi untuk memilih satuan-->
                         <select class="form-select" name="satuan_id" required>
                         <option value="" selected disabled>Pilih Satuan</option>
                         <?php
@@ -61,7 +62,7 @@ if ($result->num_rows > 0) {
                         <label class="form-label">Tipe Ekspedisi</label>
                         <div class="input-group">
 
-                    
+                        <!-- Dropdown untuk memilih Tipe & Harga ekspedisi-->
                         <select class="form-select" name="id_harga" required>
                         <option value="" selected disabled>Pilih Ekspedisi</option>
                         <?php
