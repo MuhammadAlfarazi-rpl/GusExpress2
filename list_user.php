@@ -6,9 +6,14 @@ include '.includes/header.php';
 ?>
 
 <?php
-if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
+// Memeriksa apakah yang login adalah admin
+if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { 
+    
+    // Jika bukan admin, maka tidak ditampilkan
 
-<?php } else {  ?>    
+} else {  ?> 
+    
+<!-- Jika admin, maka kode list user akan ditampilkan-->
     <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
         <div class="card">
@@ -17,13 +22,17 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
             </div>
             <div class="card-body">
                 <?php
-
+                // Mengambil id pelanggan dari sesi
                 $pelangganID = $_SESSION["pelanggan_id"];
+                // Query select untuk memeriksa pelanggan dan
+                // Tidak menampilkan pelanggan yang sedang login dan akun admin utama
                 $query = "SELECT * FROM pelanggan where username != 'Admin' AND pelanggan_id != '$pelangganID'";
-
+                // Menjalankan query sql
                 $exec = mysqli_query($conn, $query);
 
+                // Memeriksa apakah ada data didalam database
                 if (mysqli_num_rows($exec) > 0) {
+                    // Menggunakan perulangan untuk maenampilkan data
                     while ($pelanggan = mysqli_fetch_assoc($exec)) {
                         $pelanggan_id = $pelanggan ["username"];
                         echo '
@@ -82,6 +91,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { ?>
                         </div>';
                     }
                 } else {
+                    // Kode akan ditampilkan jika tidak ada data di database
                     echo '<p class="text-center text-muted">No data found.</p>';
                 }
 

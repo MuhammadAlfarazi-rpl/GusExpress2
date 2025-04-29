@@ -1,11 +1,14 @@
 <?php
 
+// Memasukkan file header
 include '.includes/header.php';
 
 ?>
 
+<!-- Memeriksa apakah yang sedang login adalah admin -->
 <?php if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') { 
     ?>
+    <!-- Jika tidak akan menampilkan history khusus user -->
     <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
         <div class="card">
@@ -15,6 +18,8 @@ include '.includes/header.php';
             <div class="card-body">
                 <?php
 
+                // Query select untuk menampilkan pengiriman yang telah selesai
+                // Menggunakan status 'selesai'
                 $query = "SELECT 
                         pengiriman.*, 
                         pelanggan.nama as user_name,
@@ -33,7 +38,12 @@ include '.includes/header.php';
 
                 $exec = mysqli_query($conn, $query);
 
+                // Memeriksa lalu mengembalikan jumlah baris
                 if (mysqli_num_rows($exec) > 0) {
+                    
+                    // Jika ada maka akan menampilkan kode berikut
+
+                    // Menggunakan perulangan while untuk menampilkan data
                     while ($pengiriman = mysqli_fetch_assoc($exec)) {
                         $pengiriman_id = $pengiriman["pengiriman_id"];
                         echo '
@@ -80,6 +90,7 @@ include '.includes/header.php';
                         </div>';
                     }
                 } else {
+                    // Akan ditampilkan jika tidak ada data yang muncul
                     echo '<p class="text-center text-muted">No data found.</p>';
                 }
 
@@ -90,6 +101,7 @@ include '.includes/header.php';
 </div>
 </div>
 
+<!-- Jika yang login adalah admin, maka akan menampilkan history admin  -->
 <?php } else { ?>
 
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -101,6 +113,7 @@ include '.includes/header.php';
     <div class="card-body">
         <?php
 
+        // Query untuk menampilkan data
         $query = "SELECT 
                 pengiriman.*, 
                 pelanggan.nama as user_name,
@@ -119,7 +132,10 @@ include '.includes/header.php';
 
         $exec = mysqli_query($conn, $query);
 
+        // Percabangan untuk memeriksa dan mengembalikan data
         if (mysqli_num_rows($exec) > 0) {
+
+            // Perulangan while untuk menampilkan data
             while ($pengiriman = mysqli_fetch_assoc($exec)) {
                 $pengiriman_id = $pengiriman["pengiriman_id"];
                 echo '
@@ -166,6 +182,7 @@ include '.includes/header.php';
                 </div>';
             }
         } else {
+            // Akan menampilkan kode berikut jika tidak ada data
             echo '<p class="text-center text-muted">No data found.</p>';
         }
 
