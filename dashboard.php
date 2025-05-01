@@ -43,6 +43,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                     LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
                     WHERE pengiriman.pelanggan_id = $user_id AND pengiriman.status = 'mengirim'";
                     // Hanya mengambil pengiriman yang memiliki 'pelanggan_id' sesuai dengan user yang sedang login
+                    // Dan pengiriman yang masih berstatus mengirim
 
             // Menjalankan $query ke database menggunakan koneksi ($conn)
             // Hasil eksekusinya disimpan dalam variabel $exec
