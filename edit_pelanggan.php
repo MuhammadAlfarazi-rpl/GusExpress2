@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['ganti'])) {
 
 }
 
-// Memeriksa apakah button hapus ditekan
+// Memeriksa apakah button hapus akun pelanggan atau deactivate ditekan
 if (isset($_POST['hapus'])) {
     $pelangganID = $_POST['pelangganID']; // Mengambil data pelanggan dari sesi
 

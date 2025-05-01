@@ -34,14 +34,16 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                     satuan.satuan_nama,
                     paket.id_harga,
                     biaya.nama_harga,
-                    biaya.nama_harga_ekspedisi
+                    biaya.nama_harga_ekspedisi,
+                    pengiriman.status
                     FROM pengiriman
                     INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                     LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
                     LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
                     LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
-                    WHERE pengiriman.pelanggan_id = $user_id";
+                    WHERE pengiriman.pelanggan_id = $user_id AND pengiriman.status = 'mengirim'";
                     // Hanya mengambil pengiriman yang memiliki 'pelanggan_id' sesuai dengan user yang sedang login
+                    // Dan pengiriman yang masih berstatus mengirim
 
             // Menjalankan $query ke database menggunakan koneksi ($conn)
             // Hasil eksekusinya disimpan dalam variabel $exec
