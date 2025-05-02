@@ -1,14 +1,22 @@
 <?php
 
+// Meng-include file header (biasanya berisi HTML awal, navbar, atau layout tampilan)
 include '.includes/header.php';
-
+// Mengambil ID pelanggan dari session yang sudah login
 $pelangganID = $_SESSION['pelanggan_id'];
+
+// Menyusun query untuk mengambil data pelanggan berdasarkan ID yang login
 $query = "SELECT * FROM pelanggan WHERE pelanggan_id= $pelangganID";
+// Menjalankan query ke database
 $result = $conn->query($query);
+
+// Mengecek apakah data pelanggan ditemukan
 if ($result->num_rows > 0) {
-$pelanggan = $result->fetch_assoc();
+    // Jika ditemukan, ambil data pelanggan dalam bentuk array asosiatif
+    $pelanggan = $result->fetch_assoc();
 } else {
-exit();
+    // Jika tidak ditemukan, hentikan eksekusi script
+    exit();
 }
 ?>
 
