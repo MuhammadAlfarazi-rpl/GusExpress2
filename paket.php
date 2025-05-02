@@ -1,8 +1,4 @@
-<?php
-
-include '.includes/header.php';
-
-?>
+<?php include '.includes/header.php'; ?>
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
