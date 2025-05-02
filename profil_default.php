@@ -20,10 +20,10 @@ include '.includes/profil.php';
                 $query = "SELECT
                 paket.*,
                 satuan.satuan_nama,
-                biaya.nama_harga
+                ekspedisi.nama_harga
                 FROM paket
                 LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
-                LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
+                LEFT JOIN ekspedisi ON paket.biaya = ekspedisi.biaya
                 WHERE paket.pelanggan_id = $user_id";
 
                 $exec = mysqli_query($conn, $query);

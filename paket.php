@@ -50,11 +50,11 @@
                         <?php
 
                             require 'config.php'; 
-                            $query = "SELECT * FROM biaya";
+                            $query = "SELECT * FROM ekspedisi";
                             $result = $conn->query($query);
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
-                                    echo "<option value='" . $row["id_harga"] . "'>" . $row["nama_harga"] ."--". $row["nama_harga_ekspedisi"]. "</option>";
+                                    echo "<option value='" . $row["biaya"] . "'>" . $row["nama_harga"] ."--". $row["nama_harga_ekspedisi"]. "</option>";
                                 }
                         }
                         ?>

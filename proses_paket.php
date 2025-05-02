@@ -11,12 +11,12 @@ if (isset($_POST['simpan'])) {
     $beratBarang = $_POST['berat'];           // mengambil jumlah berat
     $satuan = $_POST['satuan_id'];            // Mengambil satuan berat
     $tujuan = $_POST['tujuan'];               // Mengambil tujuan
-    $biaya = $_POST['id_harga'];              // Mengambil harga 
+    $biaya = $_POST['biaya'];                 // Mengambil harga 
     $detail = $_POST['detail'];               // Mengambil detail 
     $pelangganID = $_SESSION["pelanggan_id"]; // Mengambil data pelanggan dari sesi
 
     // Query sql untuk memasukkan data paket ke database
-    $query = "INSERT INTO paket (nama_paket, berat, satuan_id, tujuan, id_harga, detail, pelanggan_id) VALUES ('$namaBarang','$beratBarang','$satuan','$tujuan','$biaya','$detail','$pelangganID')";
+    $query = "INSERT INTO paket (nama_paket, berat, satuan_id, tujuan, biaya, detail, pelanggan_id) VALUES ('$namaBarang','$beratBarang','$satuan','$tujuan','$biaya','$detail','$pelangganID')";
     // Menjalankan perintah sql dan memberikan notifikasi 
     if($conn->query($query) === TRUE) {
         $_SESSION["notification"] = [
@@ -63,11 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['update'])) {
     $beratBarang = $_POST['berat'];
     $satuan = $_POST['satuan_id'];
     $tujuan = $_POST['tujuan'];
-    $biaya = $_POST['id_harga'];
+    $biaya = $_POST['biaya'];
     $detail = $_POST['detail'];
     $pelangganID = $_SESSION["pelanggan_id"]; // Mengambil id pelanggan dari sesi
     // Query sql update
-    $queryUpdate = "UPDATE paket SET nama_paket = '$namaBarang', berat = '$beratBarang', satuan_id = '$satuan', tujuan = '$tujuan', id_harga = '$biaya', pelanggan_id = '$pelangganID', detail = '$detail' WHERE paket_id = '$paketId'";
+    $queryUpdate = "UPDATE paket SET nama_paket = '$namaBarang', berat = '$beratBarang', satuan_id = '$satuan', tujuan = '$tujuan', biaya = '$biaya', pelanggan_id = '$pelangganID', detail = '$detail' WHERE paket_id = '$paketId'";
     // Eksekusi query edit dan notifikasi
     if($conn->query($queryUpdate) === TRUE){
         $_SESSION['notification'] = [
