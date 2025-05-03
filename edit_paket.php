@@ -63,17 +63,17 @@ if ($result->num_rows > 0) {
                         <div class="input-group">
 
                         <!-- Dropdown untuk memilih Tipe & Harga ekspedisi-->
-                        <select class="form-select" name="id_harga" required>
+                        <select class="form-select" name="biaya" required>
                         <option value="" selected disabled>Pilih Ekspedisi</option>
                         <?php
 
                             require 'config.php'; 
-                            $queryHarga = "SELECT * FROM biaya";
+                            $queryHarga = "SELECT * FROM ekspedisi";
                             $resultHarga = $conn->query($queryHarga);
                             if ($result->num_rows > 0) {
                                 while ($row = $resultHarga->fetch_assoc()) {
-                                    $selected = ($row['id_harga'] == $paket['id_harga']) ? "selected" : "";
-                                    echo "<option value='" . $row["id_harga"] . "'$selected>" . $row["nama_harga"] . "</option>";
+                                    $selected = ($row['biaya'] == $paket['biaya']) ? "selected" : "";
+                                    echo "<option value='" . $row["biaya"] . "'$selected>" . $row["nama_harga_ekspedisi"] . "</option>";
                                 }
                         }
                         ?>

@@ -32,15 +32,15 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                     paket.satuan_id, 
                     paket.detail,
                     satuan.satuan_nama,
-                    paket.id_harga,
-                    biaya.nama_harga,
-                    biaya.nama_harga_ekspedisi,
+                    paket.biaya,
+                    ekspedisi.nama_harga,
+                    ekspedisi.nama_harga_ekspedisi,
                     pengiriman.status
                     FROM pengiriman
                     INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                     LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
                     LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
-                    LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
+                    LEFT JOIN ekspedisi ON paket.biaya = ekspedisi.biaya
                     WHERE pengiriman.pelanggan_id = $user_id AND pengiriman.status = 'mengirim'";
                     // Hanya mengambil pengiriman yang memiliki 'pelanggan_id' sesuai dengan user yang sedang login
                     // Dan pengiriman yang masih berstatus mengirim
@@ -241,14 +241,14 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
                         paket.satuan_id, 
                         paket.detail,
                         satuan.satuan_nama,
-                        paket.id_harga,
-                        biaya.nama_harga,
-                        biaya.nama_harga_ekspedisi
+                        paket.biaya,
+                        ekspedisi.nama_harga,
+                        ekspedisi.nama_harga_ekspedisi
                         FROM pengiriman
                         INNER JOIN pelanggan ON pengiriman.pelanggan_id = pelanggan.pelanggan_id
                         LEFT JOIN paket ON pengiriman.paket_id = paket.paket_id
                         LEFT JOIN satuan ON paket.satuan_id = satuan.satuan_id
-                        LEFT JOIN biaya ON paket.id_harga = biaya.id_harga
+                        LEFT JOIN ekspedisi ON paket.biaya = ekspedisi.biaya
                         WHERE pengiriman.status = 'mengirim'";
 
             // Menjalankan $query ke database menggunakan koneksi ($conn)
