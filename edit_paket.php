@@ -73,7 +73,7 @@ if ($result->num_rows > 0) {
                             if ($result->num_rows > 0) {
                                 while ($row = $resultHarga->fetch_assoc()) {
                                     $selected = ($row['biaya'] == $paket['biaya']) ? "selected" : "";
-                                    echo "<option value='" . $row["biaya"] . "'$selected>" . $row["nama_harga_ekspedisi"] . "</option>";
+                                    echo "<option value='" . $row["biaya"] . "'>" . $row["nama_harga"] ."--". $row["nama_harga_ekspedisi"]. "</option>";
                                 }
                         }
                         ?>
