@@ -45,7 +45,7 @@
                         <div class="input-group">
 
                     
-                        <select class="form-select" name="id_harga" required>
+                        <select class="form-select" name="biaya" required>
                         <option value="" selected disabled>Pilih Ekspedisi</option>
                         <?php
 

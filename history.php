@@ -174,7 +174,7 @@ include '.includes/header.php';
 
                         <form method="POST" action="proses_pengiriman.php">
                         <input type="hidden" name="pengirimanID" value="'.$pengiriman['pengiriman_id'].'">
-                        <button name="delete" type="submit" class="btn btn-outline-danger me-2">Hapus History</button>
+                        <button name="deleteHistory" type="submit" class="btn btn-outline-danger me-2">Hapus History</button>
                         </form>
                     </div>
                     </div>
