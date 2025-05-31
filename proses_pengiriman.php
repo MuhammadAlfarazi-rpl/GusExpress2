@@ -39,13 +39,13 @@ if(isset($_POST['delete'])) {
     if ($exec) {
         $_SESSION['notification'] = [
             'type' => 'primary',
-            'message' => 'Paket berhasil dihapus.'
+            'message' => 'Pengiriman berhasil dibatalkan.'
         ];
 
     }else {
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Paket gagal ditambahkan'
+            'message' => 'Pengiriman gagal ditambahkan'
         ];
     }
     // Redirect ke laman dashboard
